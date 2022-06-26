@@ -70,7 +70,7 @@ lvim/
 |F3|Telescope live_grep_args|  全文搜索 使用方式同 rg带参数搜索，这个不能按照程序方式进行搜索|
 |F4|SymbolsOutline| 大纲模式，在右侧显示 函数、结构等信息|
 |F5|Telescope treesitter| 搜索的时候使用 treesitter来进行，面向程序|
-|F6|terminal| 命令行窗口，打开后，i进行搜索|
+|F6|terminal| 命令行窗口，打开后，i进行输入 |
 |Z|zen-mode| 装逼模式，试试就知道|
 |sdy|surround|编辑字符串|
 |.|repeat|重复|
