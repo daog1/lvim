@@ -59,7 +59,7 @@ lvim/
     config.lua          配置入口和一些LunarVim内建配置
     lua/
       builtin.lua      内建配置
-      lualine.lua      lualine状态栏配置
+      ulualine.lua      lualine状态栏配置
       plugins.lua      安装的插件
 ```
 ### 功能列表

@@ -113,7 +113,7 @@ linters.setup {
 
 require("builtin").config()
 require("plugins").config()
-require("lualine").config()
+require("ulualine").config()
 -- lvim.builtin.telescope.on_config_done = function(telescope)
 -- pcall(telescope.load_extension, "ag")
 -- any other extensions loading
