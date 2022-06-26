@@ -15,13 +15,14 @@ lvim 自定义配置
 ## 前言
 最近感觉手腕疼，网上搜索了一下，得了鼠标手，开始折腾多用键盘编程方式。
 
-先后尝试过 helix，neovide等开源项目，感觉helix可定制行太差，临时用一下比较可以。
-neovide也是开起来好看，如果要安装新的包什么的也不是很方便.
+先后尝试过 helix，nvchad等开源项目，感觉helix可定制行太差，临时用一下比较可以。
+nvchad也是开起来好看，如果要安装新的包什么的也不是很方便.
 
 后面尝试了一下LunarVim，感觉还不错。
 
 折腾良久，不喜勿喷！
 
+配合[neovide](https://github.com/neovide/neovide)效果更酷炫，默认脚本已设置好字体。
 ## 安装
 如何安装，参考，lunarvim 的文档。
 https://www.lunarvim.org/
@@ -74,8 +75,8 @@ lvim/
 |sdy|surround|编辑字符串|
 |.|repeat|重复|
 ||rainbow|彩虹配对，默认打开|
-
 |<空格> +e |neovimtree | 文件浏览器|
+
 > 更详细的功能，多按F2
 
 ### 效果
