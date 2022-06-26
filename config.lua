@@ -3,8 +3,8 @@ vim.o.guifont = "FiraCode NF:h10"
 
 vim.cmd [[set mouse=a]]
 -- Enable powershell as your default shell
-vim.opt.shell = "pwsh.exe -NoLogo"
-vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+-- vim.opt.shell = "pwsh.exe -NoLogo"
+-- vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
 
