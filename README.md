@@ -72,6 +72,7 @@ lvim/
 |F5|Telescope treesitter| 搜索的时候使用 treesitter来进行，面向程序|
 |F6|terminal| 命令行窗口，打开后，i进行输入 |
 |Z|zen-mode| 装逼模式，试试就知道|
+|ctrl+v|Telescope paste|在Telescope提示窗口粘贴|
 |sdy|surround|编辑字符串|
 |.|repeat|重复|
 ||rainbow|彩虹配对，默认打开|
