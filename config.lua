@@ -24,6 +24,9 @@ lvim.keys.normal_mode["Z"] = ":ZenMode<CR>"
 lvim.builtin.which_key.mappings["P"] = {
   "<CMD>Telescope projects<CR>", "Projects"
 }
+lvim.builtin.which_key.mappings["t"] = {
+  "<CMD>Trouble<CR>", "Trouble"
+}
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = ""
 -- edit a default keymapping
@@ -121,6 +124,3 @@ require("ulualine").config()
 -- Buffer Line
 lvim.builtin.bufferline.options.numbers = "ordinal"
 lvim.builtin.bufferline.options.separator_style = { '|', '|' }
-
-
-
