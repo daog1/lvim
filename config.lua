@@ -26,15 +26,15 @@ vim.g.clipboard = {
 }
 
 -- vim options
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.relativenumber = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.relativenumber = false
 
 -- general
 lvim.log.level = "info"
 lvim.format_on_save = {
   enabled = true,
-  pattern = "*.lua",
+  pattern = {"*.lua","*.go"},
   timeout = 1000,
 }
 -- to disable icons and use a minimalist setup, uncomment the following
@@ -52,7 +52,8 @@ lvim.keys.normal_mode["<F3>"] = ":Telescope live_grep_args<CR>"
 lvim.keys.normal_mode["<F4>"] = ":SymbolsOutline<CR>"
 lvim.keys.normal_mode["<F5>"] = "<Esc>:Telescope treesitter<CR>"
 lvim.keys.normal_mode["<F6>"] = ":terminal<CR>"
-lvim.keys.normal_mode["Z"] = ":ZenMode<CR>"
+-- lvim.keys.normal_mode["<F>"] = ":terminal<CR>"
+lvim.keys.normal_mode["Z"] = ":TZFocus<CR>"
 
 lvim.builtin.which_key.mappings["s"] = {
   "<CMD>SymbolsOutline<CR>", "SymbolsOutline"
@@ -67,6 +68,7 @@ keymap("n", "<m-l>", "<C-w>l", opts)
 keymap("n", "<m-tab>", "<c-6>", opts)
 
 vim.api.nvim_set_keymap("n", "<S-l>",   ":bnext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-h>",   ":bprevious<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-h>",   ":bprevious<CR>", { noremap = true, silent = true })
 
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
@@ -91,6 +93,39 @@ lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.autotag.enable = true
 lvim.builtin.treesitter.rainbow.enable = true
+
+lvim.builtin.treesitter.textobjects = {
+  select = {
+    enable = true,
+    -- Automatically jump forward to textobj, similar to targets.vim
+    lookahead = true,
+    keymaps = {
+      -- You can use the capture groups defined in textobjects.scm
+      ["af"] = "@function.outer",
+      ["if"] = "@function.inner",
+      ["at"] = "@class.outer",
+      ["it"] = "@class.inner",
+      ["ac"] = "@call.outer",
+      ["ic"] = "@call.inner",
+      ["aa"] = "@parameter.outer",
+      ["ia"] = "@parameter.inner",
+      ["al"] = "@loop.outer",
+      ["il"] = "@loop.inner",
+      ["ai"] = "@conditional.outer",
+      ["ii"] = "@conditional.inner",
+      ["a/"] = "@comment.outer",
+      ["i/"] = "@comment.inner",
+      ["ab"] = "@block.outer",
+      ["ib"] = "@block.inner",
+      ["as"] = "@statement.outer",
+      ["is"] = "@scopename.inner",
+      ["aA"] = "@attribute.outer",
+      ["iA"] = "@attribute.inner",
+      ["aF"] = "@frame.outer",
+      ["iF"] = "@frame.inner",
+    },
+  },
+}
 
 lvim.builtin.bufferline.options.numbers = "ordinal"
 lvim.builtin.bufferline.options.separator_style = { '|', '|' }
@@ -193,11 +228,23 @@ lvim.plugins = {
       require "lsp_signature".setup()
     end
   },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+  },
+  {
+    "Pocco81/true-zen.nvim",
+    config = function()
+       require("true-zen").setup {
+        -- your config goes here
+        -- or just leave it empty :)
+       }
+    end,
+  },
   { "tpope/vim-repeat" },
-    {
+  {
       "tpope/vim-surround",
       -- event = "BufRead",
       --   keys = {"c", "d", "y"}
-    },
+  },
     
 }
