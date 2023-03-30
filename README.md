@@ -31,7 +31,7 @@ https://www.lunarvim.org/
 
 你需要安装[LunarVim](https://www.lunarvim.org/01-installing.html#installation)，安装依赖包括:
 
-1. [neovim-0.7](https://github.com/neovim/neovim/releases)或以上版本
+1. [neovim-0.9](https://github.com/neovim/neovim/releases)每日构建版本
 2. [git](https://git-scm.com/downloads)
 3. [python pip](https://pip.pypa.io/en/stable/installation/)
 4. [nodejs npm](https://www.npmjs.com/)
@@ -57,10 +57,6 @@ Invoke-WebRequest https://raw.githubusercontent.com/LunarVim/LunarVim/master/uti
 ```txt
 lvim/
     config.lua          配置入口和一些LunarVim内建配置
-    lua/
-      builtin.lua      内建配置
-      ulualine.lua      lualine状态栏配置
-      plugins.lua      安装的插件
 ```
 ### 功能列表
 | 快捷键 | 名字 | 功能 |
