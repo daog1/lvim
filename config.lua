@@ -126,7 +126,16 @@ lvim.builtin.treesitter.textobjects = {
     },
   },
 }
-
+local actions = require("telescope.actions")
+pastfn = function(prompt_bufnr)
+  local action_state = require "telescope.actions.state"
+  local current_picker = action_state.get_current_picker(prompt_bufnr)
+  current_picker:reset_prompt()
+  local entry = vim.fn.getreg("*")
+  if entry ~= nil then
+    current_picker:set_prompt(entry)
+  end
+end
 lvim.builtin.bufferline.options.numbers = "ordinal"
 lvim.builtin.bufferline.options.separator_style = { '|', '|' }
 local function open_nvim_tree()
@@ -135,6 +144,7 @@ local function open_nvim_tree()
   require("nvim-tree.api").tree.open()
 end
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+lvim.builtin.telescope.defaults.mappings.i["<C-v>"] = pastfn
 
 lvim.plugins = {
   {
