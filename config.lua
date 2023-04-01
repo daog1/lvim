@@ -138,7 +138,19 @@ pastfn = function(prompt_bufnr)
 end
 lvim.builtin.bufferline.options.numbers = "ordinal"
 lvim.builtin.bufferline.options.separator_style = { '|', '|' }
-local function open_nvim_tree()
+local function open_nvim_tree(data)
+
+  -- buffer is a directory
+  local directory = vim.fn.isdirectory(data.file) == 1
+
+  if not directory then
+    return
+  end
+  -- create a new, empty buffer
+  vim.cmd.enew()
+
+  -- change to the directory
+  vim.cmd.cd(data.file)
 
   -- open the tree
   require("nvim-tree.api").tree.open()
