@@ -2,6 +2,9 @@
  THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
  `lvim` is the global options object
 ]]
+if vim.g.neovide then
+	vim.o.guifont = "FiraCode Nerd Font Mono:H14"
+end
 
 if vim.loop.os_uname().sysname:find "Windows" and true or false then
   vim.opt.shell = "pwsh.exe -NoLogo"
