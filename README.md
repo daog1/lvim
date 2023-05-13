@@ -50,6 +50,13 @@ Invoke-WebRequest https://raw.githubusercontent.com/LunarVim/LunarVim/master/uti
 ```sh
   :PackerSync
 ```
+## neovide 使用
+打开 ~/.local/bin/lvim 这样修改：
+
+```
+#exec -a "$NVIM_APPNAME" nvim -u "$LUNARVIM_BASE_DIR/init.lua" "$@"
+exec -a "$NVIM_APPNAME" neovide -- -u "$LUNARVIM_BASE_DIR/init.lua" "$@"
+```
 
 ## 功能介绍
 我这个自定义配置，主要为了方便自己编码，完全没有考虑调试代码的情况
